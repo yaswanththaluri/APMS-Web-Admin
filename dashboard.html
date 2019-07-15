@@ -29,37 +29,37 @@
 
     </head>
 
-    <body id="authBody">
+    <body id="dashboardBody">
 
-        <div class="row" id="myContent">
 
-            <div class="col-md-6" id="splash">
+        <nav class="navbar" id="myNav">
+            <span class="navbar-brand mb-0 h1">Admin DashBoard</span>
 
-                <div id="logoDiv">
-                    <i class="fas fa-parking fa-10x" id="icon"></i>
-                    <h6>Automated</h6>
-                    <h6>Parking Mangaement System</h6>
+            <span class="navbar-text">Automated Parking Management System</span>
+        </nav>
+
+
+
+        <div id="myContentDashboard">
+
+
+            <div id="iconsDashboard">
+
+                <div class="icons">
+
+                    <img src="Icons/usersIcon.png" id="users" >
+
                 </div>
 
-            </div>
+                <div class="icons">
 
-            <div class="col-md-6" id="authDiv">
+                    <img src="Icons/parkingIcon.png" id="parkinglot" >
 
-                <h1>Welcome Admin!</h1>
+                </div>
 
-                <div id="authForm">
+                <div class="icons">
 
-                    <div class="form-group">
-                        <label for="adminIdNumber">Admin Authentication ID :</label>
-                        <input type="text" class="form-control" id="adminIdNumber" placeholder="Enter 12-digit ID of Admin">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="passwordLogIn">Password</label>
-                        <input type="password" class="form-control" id="passwordLogIn" placeholder="Password">
-                    </div>
-
-                    <button class="btn" id="logInButton"><b>Log In</b></button>
+                    <img src="Icons/settingsIcon.png" id="settings" >
 
                 </div>
 
@@ -67,6 +67,11 @@
 
         </div>
 
+
+
+
+
     </body>
+
 
 </html>
