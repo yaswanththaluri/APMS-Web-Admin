@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Automated PMS</title>
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+              integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <script src="users.js" type="application/javascript"></script>
+
+    </head>
+
+
+    <body id="usersBody">
+
+        <nav class="navbar" id="myNav">
+            <span class="navbar-brand mb-0 h1">User(s) Management</span>
+
+            <span class="navbar-text">Automated Parking Management System</span>
+        </nav>
+
+        <div id="contentUserBody">
+
+
+            <div id="newUserCreationDiv">
+
+                <div id="controlsHeadUserCreation">
+
+                    <h4 id="createUserTitle">Create New User</h4>
+
+                    <i class="far fa-times-circle fa-2x" id="closeUserCreation"></i>
+
+                </div>
+
+                <hr id="hr-usercreationdiv">
+
+                <div class="form-group">
+                    <label for="nameUser">User Name</label>
+                    <input type="text" class="form-control" id="nameUser" placeholder="Enter User Full Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailUser">Email address</label>
+                    <input type="email" class="form-control" id="emailUser" placeholder="Enter email">
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordUser">New Password</label>
+                    <input type="password" class="form-control" id="passwordUser" placeholder="Enter Password">
+                </div>
+
+                <div class="form-group">
+                    <label for="idUser">National ID</label>
+                    <input type="text" class="form-control" id="idUser" placeholder="Enter ID Number ">
+                </div>
+
+                <div class="form-group">
+                    <label for="addressUser">User Address</label>
+                    <textarea class="form-control" id="addressUser" placeholder="Address of User" rows="5" cols="20"></textarea>
+                </div>
+
+                <button class="btn btn-success" id="submitUserDetails">Create User</button>
+
+            </div>
+
+            <div id="controlsHead">
+
+                <h3>Users Enrolled for Parking:</h3>
+
+                <button class="btn btn-success" id="addNewUser">Add New User</button>
+
+            </div>
+
+            <hr>
+
+            <div id="usersList">
+
+                <div class="userItemDetails">
+
+                    <div class="userItem">
+                        <h5>User ID 11602775</h5>
+
+                        <button class="btn btn-primary" id="showDetails">Show Details</button>
+                    </div>
+
+                    <div id="userFullDetails">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque culpa, cumque
+                            dignissimos dolor eius exercitationem laborum, minima molestias nisi officia quia quis
+                            repellat tempora unde voluptas voluptatibus. Vel, voluptates.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </body>
+
+</html>

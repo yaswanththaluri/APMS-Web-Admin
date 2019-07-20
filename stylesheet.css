@@ -100,7 +100,7 @@ label
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
 }
 
-#dashboardBody
+#dashboardBody, #usersBody
 {
     background-color: white;
 }
@@ -137,4 +137,100 @@ label
     border-radius: 50%;
     box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.50);
     cursor: pointer;
+}
+
+
+/*------------------------------------Users Page ------------------------------------*/
+
+
+#contentUserBody
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#controlsHead
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 0.5%;
+    color: #006699;
+}
+hr
+{
+    background-color: black;
+    width: 90%;
+}
+#usersList
+{
+    width: 80%;
+    margin-top: 1%;
+}
+
+.userItemDetails
+{
+    padding: 1%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+
+.userItem
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #09bbc6;
+}
+
+#userFullDetails
+{
+    display: none;
+    padding: 1%;
+    background-color: #e5eecc;
+    margin-top: 1%;
+}
+
+#newUserCreationDiv
+{
+    display: none;
+    width: 60%;
+    z-index: 1;
+    position: fixed;
+    top: 5%;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 2%;
+    background-color: white;
+}
+
+#hr-usercreationdiv
+{
+    width: 100%;
+}
+
+#createUserTitle
+{
+    color: #006699;
+}
+
+#closeUserCreation
+{
+    color: red;
+    cursor: pointer;
+}
+#controlsHeadUserCreation
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5%;
+    color: #006699;
 }
