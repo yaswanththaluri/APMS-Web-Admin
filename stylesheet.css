@@ -186,6 +186,18 @@ hr
     color: #09bbc6;
 }
 
+#paswwordField
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#passwordUser
+{
+    width: 50%;
+}
+
 #userFullDetails
 {
     display: none;
