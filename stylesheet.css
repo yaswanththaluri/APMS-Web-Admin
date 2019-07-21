@@ -2,8 +2,6 @@ body, html
 {
     max-width: 100%;
     overflow-x: hidden;
-    max-height: 100%;
-    overflow-y: hidden;
 }
 
 #authBody
@@ -243,4 +241,53 @@ hr
     flex-direction: column;
     align-items: center;
     margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#parkingLayout
+{
+    width: 80%;
+}
+
+.card
+{
+    text-align: center;
+    width: 60%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+.parking-hr
+{
+    width: 100%;
+}
+.card-body
+{
+    padding: 5%;
+}
+.card-img-top
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.slotNumber
+{
+    font-size: 400%;
+    text-align: center;
+    height: 100%;
+}
+
+.layItem
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.layRow
+{
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
