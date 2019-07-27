@@ -59,6 +59,25 @@ $(document).ready(function () {
         
     });
 
+    $("#checkUser").click(function () {
+
+        displayDetails(document.getElementById("UIDInput").value);
+        $("#checkUser").hide();
+        $("#resetField").show();
+        $("#UIDInput").prop("disabled", true);
+
+    });
+
+    $("#resetField").click( function () {
+
+        document.getElementById("UIDInput").value = "";
+        $("#checkUser").show();
+        $("#resetField").hide();
+        $("#userDetailsDisplay").hide();
+        $("#UIDInput").prop("disabled", false);
+    });
+
+
 });
 
 
@@ -117,3 +136,24 @@ function updateUserDetailsToDatabase(name, email, id, address) {
     alert("updated details");
 }
 
+
+function displayDetails(userId)
+{
+    var name = document.getElementById("userNameDisplay");
+    var email = document.getElementById("userEmailDisplay");
+    var uid = document.getElementById("userUIDDisplay");
+    var address = document.getElementById("userAddressDisplay");
+
+    firebase.database().ref("userInfo/"+userId).once("value").then(function (snapshot) {
+
+        name.innerHTML = snapshot.val()["username"];
+        email.innerHTML = snapshot.val()["emailAddress"];
+        uid.innerHTML = snapshot.val()["idNumber"];
+        address.innerHTML = snapshot.val()["addressUser"];
+
+        $("#userDetailsDisplay").show();
+
+    });
+
+
+}
