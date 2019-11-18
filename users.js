@@ -115,9 +115,10 @@ function createNewUser(email, password, name, id, address) {
 
             console.log(errorCode+" "+errorMessage);
         })
-        .then(function () {
+        .then(function (data) {
             alert("user successfully created");
-            updateUserDetailsToDatabase(name, email, id, address);
+            console.log(data.user.uid);
+            updateUserDetailsToDatabase(name, email, data.user.uid, address);
         });
 
 }
@@ -129,9 +130,11 @@ function updateUserDetailsToDatabase(name, email, id, address) {
                 username: name,
                 emailAddress: email,
                 idNumber: id,
-                addressUser: address
+                addressUser: address,
+                slotNumber : "None"
             }
     );
+
 
     alert("updated details");
 }
