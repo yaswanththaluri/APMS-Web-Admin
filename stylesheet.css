@@ -376,3 +376,26 @@ hr
     flex-direction: row;
     justify-content: space-between;
 }
+
+#slotDetails
+{
+    width: 80%;
+    margin: 0 10% 0 10%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 20%;
+    z-index: 3;
+    padding: 20px;
+    display: none;
+}
+
+
+#slot_details_header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
