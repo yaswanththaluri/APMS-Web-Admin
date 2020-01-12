@@ -352,3 +352,27 @@ hr
     margin-top: 2%;
     margin-bottom: 2%;
 }
+
+#time_items
+{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 5px 20px 5px;
+    padding: 10px;
+}
+
+.item_parking
+{
+    border: 1px solid cornflowerblue;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.item_data
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
