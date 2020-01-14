@@ -7,6 +7,23 @@ $(document).ready(function () {
     var idUser = document.getElementById("idUser");
     var addressUser = document.getElementById("addressUser");
 
+    var database = firebase.database();
+
+    var ref = database.ref('userInfo').orderByChild('username');
+
+    ref.on('value', function(snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+            var childData = childSnapshot.val();
+            addUserToSelectMenu(childData);
+        })
+    });
+
+    var filOption = document.getElementById("usersFilter");
+    filOption.onchange = function () {
+        var id = filOption.options[filOption.selectedIndex].value;
+        displayDetails(id);
+    };
+
     $("#closeUserCreation").click(function () {
 
         $("#newUserCreationDiv").hide("slow");
@@ -159,4 +176,13 @@ function displayDetails(userId)
     });
 
 
+}
+
+function addUserToSelectMenu(childData)
+{
+    var selectEle = document.getElementById("usersFilter");
+    var option = document.createElement("option");
+    option.text = childData["username"];
+    option.value = childData["idNumber"];
+    selectEle.add(option);
 }
