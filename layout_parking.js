@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $("#loader_parent").css("display", "flex");
+
     checkSlotAvailibility();
 
 
@@ -25,6 +27,7 @@ function checkSlotAvailibility() {
     {
         firebase.database().ref("slotsInfo/slot"+(i+1)).once("value").then(function (snapshot) {
 
+            $("#loader_parent").css("display", "none");
             if(snapshot.val()["isFilled"] === "yes")
             {
                 slotFilled[(snapshot.val()["slotNumber"])-1].innerText = "Filled";
@@ -43,8 +46,10 @@ function checkSlotAvailibility() {
         var divs = $(".card-link");
         $("#slotDetails").toggle();
         var curIdx = divs.index($(this));
+        $("#loader_parent").css("display", "flex");
         getDetailsOfParticularSlot(curIdx);
     });
+
 
 }
 
@@ -64,6 +69,7 @@ function userInSlotDetails(slotData)
     var uid = slotData["userInSlot"];
     firebase.database().ref("userInfo/"+uid).once("value").then(
         function (snapshot) {
+            $("#loader_parent").css("display", "none");
             document.getElementById("user_slot_name").innerText = "User name : "+snapshot.val()["username"];
             document.getElementById("user_id_slot").innerText = "User UID : "+snapshot.val()["idNumber"];
             document.getElementById("user_slot_email").innerText = "User Email : "+snapshot.val()["emailAddress"];

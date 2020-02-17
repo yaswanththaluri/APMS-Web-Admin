@@ -10,6 +10,7 @@ $(document).ready(function () {
     var database = firebase.database();
 
     var ref = database.ref('userInfo').orderByChild('username');
+    $("#loader_parent").css("display", "flex");
 
     ref.on('value', function(snapshot) {
         snapshot.forEach(function (childSnapshot) {
@@ -20,6 +21,7 @@ $(document).ready(function () {
 
     var filOption = document.getElementById("usersFilter");
     filOption.onchange = function () {
+        $("#loader_parent").css("display", "flex");
         var id = filOption.options[filOption.selectedIndex].value;
         displayDetails(id);
     };
@@ -67,7 +69,7 @@ $(document).ready(function () {
         var address = addressUser.value;
         var name = nameUser.value;
 
-
+        $("#loader_parent").css("display", "flex");
         if (validateDetails(name, email, id, address, password))
         {
             createNewUser(email, password, name, id, address);
@@ -126,7 +128,7 @@ function createNewUser(email, password, name, id, address) {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .catch(function (error) {
-
+            $("#loader_parent").css("display", "none");
             var errorCode = error.code;
             var errorMessage = error.message;
 
@@ -152,7 +154,7 @@ function updateUserDetailsToDatabase(name, email, id, address) {
             }
     );
 
-
+    $("#loader_parent").css("display", "none");
     alert("updated details");
 }
 
@@ -172,7 +174,7 @@ function displayDetails(userId)
         address.innerHTML = snapshot.val()["addressUser"];
 
         $("#userDetailsDisplay").show();
-
+        $("#loader_parent").css("display", "none");
     });
 
 
@@ -180,6 +182,7 @@ function displayDetails(userId)
 
 function addUserToSelectMenu(childData)
 {
+    $("#loader_parent").css("display", "none");
     var selectEle = document.getElementById("usersFilter");
     var option = document.createElement("option");
     option.text = childData["username"];
