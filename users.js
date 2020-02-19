@@ -75,6 +75,10 @@ $(document).ready(function () {
             createNewUser(email, password, name, id, address);
 
         }
+        else
+        {
+            alert("Details doesn't matched according to required criteria");
+        }
         
     });
 
